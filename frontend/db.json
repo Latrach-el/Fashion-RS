@@ -1,0 +1,54 @@
+{
+  "recommend_by_preferences": [
+    {
+      "articleType": "Tshirts",
+      "baseColour": "Black",
+      "gender": "Men",
+      "id": 13154,
+      "productDisplayName": "Puma Men Scribble Black Tshirts",
+      "season": "Fall",
+      "similarity_score": 0.6077892787107093
+    },
+    {
+      "articleType": "Tshirts",
+      "baseColour": "Black",
+      "gender": "Men",
+      "id": 20316,
+      "productDisplayName": "Locomotive Men Black Printed T-shirt",
+      "season": "Fall",
+      "similarity_score": 0.6077892787107093
+    },
+    {
+      "articleType": "Tshirts",
+      "baseColour": "Black",
+      "gender": "Men",
+      "id": 8399,
+      "productDisplayName": "ADIDAS Men Adna Ss Tee Black T-Shirts",
+      "season": "Fall",
+      "similarity_score": 0.6077892787107093
+    },
+    {
+      "articleType": "Tshirts",
+      "baseColour": "Black",
+      "gender": "Men",
+      "id": 8405,
+      "productDisplayName": "ADIDAS Men M Rsp Tee Black T-Shirts",
+      "season": "Fall",
+      "similarity_score": 0.6077892787107093
+    },
+    {
+      "articleType": "Tshirts",
+      "baseColour": "Black",
+      "gender": "Men",
+      "id": 21594,
+      "productDisplayName": "Kipsta Men Solid Black Jerseys",
+      "season": "Fall",
+      "similarity_score": 0.6077892787107093
+    },
+    {
+      "id": 7567,
+      "gender": "male",
+      "season": "winter"
+    }
+  ]
+}
