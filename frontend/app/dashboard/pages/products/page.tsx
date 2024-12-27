@@ -15,6 +15,7 @@ export async function generateMetadata() {
 export default async function Page() {
   const user = await currentUser();
 
+
   const recommandations = await getRecommandationByPreferences(
     user?.unsafeMetadata.gender as string,
     getCurrentSeason()

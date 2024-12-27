@@ -23,8 +23,7 @@ import { toast } from "sonner";
 export default function RegisterPage() {
   const { isLoaded, signUp, setActive } = useSignUp();
   const [password, setPassword] = useState("");
-  const [firstName, setFirstName] = useState("");
-  const [lastName, setLastName] = useState("");
+  const [username, setUsername] = useState("");
   const [gender, setGender] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const router = useRouter();
@@ -40,10 +39,8 @@ export default function RegisterPage() {
       const result = await signUp.create({
         // emailAddress: email,
         password,
-        username: `${firstName.toLowerCase()}${lastName.toLowerCase()}`, // Create a username
+        username: username, // Create a username
         unsafeMetadata: {
-          firstName, // Move to metadata
-          lastName, // Move to metadata
           gender,
           season: "summer"
         }
@@ -77,22 +74,22 @@ export default function RegisterPage() {
           <form onSubmit={handleSubmit} className="mt-8 space-y-6">
             <div className="space-y-4">
               <div>
-                <Label htmlFor="firstName" className="sr-only">
-                  First Name
+                <Label htmlFor="username" className="sr-only">
+                  User Name
                 </Label>
                 <Input
-                  id="firstName"
-                  name="firstName"
+                  id="username"
+                  name="username"
                   type="text"
                   required
-                  value={firstName}
-                  onChange={(e) => setFirstName(e.target.value)}
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                   disabled={isLoading}
                   className="w-full"
-                  placeholder="First Name"
+                  placeholder="User Name"
                 />
               </div>
-              <div>
+              {/* <div>
                 <Label htmlFor="lastName" className="sr-only">
                   Last Name
                 </Label>
@@ -107,7 +104,7 @@ export default function RegisterPage() {
                   className="w-full"
                   placeholder="Last Name"
                 />
-              </div>
+              </div> */}
 
               <div>
                 <Label htmlFor="gender" className="sr-only">
@@ -119,8 +116,8 @@ export default function RegisterPage() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectGroup>
-                      <SelectItem value="male">Male</SelectItem>
-                      <SelectItem value="female">Female</SelectItem>
+                      <SelectItem value="Men">Man</SelectItem>
+                      <SelectItem value="Women">Women</SelectItem>
                     </SelectGroup>
                   </SelectContent>
                 </Select>

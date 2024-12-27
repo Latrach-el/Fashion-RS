@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import ProductCard from "@/components/product-card";
+import ProductCard from "@/app/dashboard/pages/products/product-card";
 import {
   Accordion,
   AccordionContent,

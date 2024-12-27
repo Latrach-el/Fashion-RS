@@ -1,7 +1,11 @@
 dataset
+
 workflow/intreface
 workflow/intreface
 workflow/Images_features.pkl
 workflow/filenames.pkl
 workflow/label_encoder.pkl
 workflow/fashion_classifier.h5
+
+model
+

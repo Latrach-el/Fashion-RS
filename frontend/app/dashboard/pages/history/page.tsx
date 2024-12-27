@@ -15,10 +15,17 @@ export async function generateMetadata() {
 export default async function Page() {
   const user = await currentUser();
 
-  console.log(user?.unsafeMetadata.favoriteProducts);
+  if (user?.unsafeMetadata.favoriteProducts === undefined) {
+    return (
+      <div className="flex items-center justify-center h-96">
+        <h1 className="text-2xl font-bold tracking-tight">No products found</h1>
+      </div>
+    );
+  }
 
+  const updatedFavorites = (user?.unsafeMetadata.favoriteProducts as string[]).map((product) => `${product}.jpg`);
   const recommandations = await getRecommandationByImages(
-    user?.unsafeMetadata.favoriteProducts as number[],
+    updatedFavorites,
     {
       gender: user?.unsafeMetadata.gender as string,
       season: getCurrentSeason()

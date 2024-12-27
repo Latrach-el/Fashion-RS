@@ -1,8 +1,8 @@
 import axios from "axios";
 
 const axiosInstance = axios.create({
-  baseURL: "http://localhost:5000",
-  timeout: 1000
+  baseURL: "http://localhost:5000"
+  // timeout: 8000
 });
 
 export interface Recommandation {
@@ -28,27 +28,26 @@ export const getRecommandationByPreferences = async (
     gender,
     season
   };
-  // const response = await axiosInstance.post<Recommandation[]>(`/recommend_by_preferences`,body);
-  const response = await axiosInstance.get<Recommandation[]>(`/recommend_by_preferences`,);
+  const response = await axiosInstance.post<Recommandation[]>(`/recommend_by_preferences`, body);
+  // const response = await axiosInstance.get<Recommandation[]>(`/recommend_by_preferences`,);
   return response.data;
 };
 
 export const getRecommandationByImages = async (
-  images: number[],
+  images: string[],
   preferences: PreferencesBody
 ): Promise<Recommandation[]> => {
   const body = {
     images,
     preferences
   };
-  // const response = await axiosInstance.post<Recommandation[]>(`/recommend_by_image`, body);
-  const response = await axiosInstance.get<Recommandation[]>(`/recommend_by_preferences`,);
+  console.log(body);
+  const response = await axiosInstance.post<Recommandation[]>(`/recommend_by_image`, body);
+  // const response = await axiosInstance.get<Recommandation[]>(`/recommend_by_preferences`,);
   return response.data;
 };
 
-
 export async function getProducts(recommandations: Recommandation[]) {
-
   const products = await Promise.all(
     recommandations.map(async (rec) => {
       const filename = `${rec.id}.jpg`;
