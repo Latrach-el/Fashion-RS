@@ -17,26 +17,29 @@ export default async function Page() {
 
   if (user?.unsafeMetadata.favoriteProducts === undefined) {
     return (
-      <div className="flex items-center justify-center h-96">
+      <div className="flex h-96 items-center justify-center">
         <h1 className="text-2xl font-bold tracking-tight">No products found</h1>
       </div>
     );
   }
 
-  const updatedFavorites = (user?.unsafeMetadata.favoriteProducts as string[]).map((product) => `${product}.jpg`);
-  const recommandations = await getRecommandationByImages(
-    updatedFavorites,
-    {
-      gender: user?.unsafeMetadata.gender as string,
-      season: getCurrentSeason()
-    }
+  const updatedFavorites = (user?.unsafeMetadata.favoriteProducts as string[]).map(
+    (product) => `${product}.jpg`
   );
+  const recommandations = await getRecommandationByImages(updatedFavorites, {
+    gender: user?.unsafeMetadata.gender as string,
+    season: getCurrentSeason()
+  });
   const products = await getProducts(recommandations);
 
   return (
     <>
-      <div className="flex items-center justify-between space-y-2">
+      <div className="flex flex-col items-start justify-between space-y-2 border-b pb-4">
         <h1 className="text-2xl font-bold tracking-tight">Products Purchase History</h1>
+        <p>
+          This is a list of products that match your preferences based on your purchase history.
+        </p>
+        <p>{products.length} products</p>
       </div>
       <ProductsHistory products={products} />
     </>

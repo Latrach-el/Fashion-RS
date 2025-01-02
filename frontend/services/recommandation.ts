@@ -1,3 +1,4 @@
+import { Product } from "@/lib/types";
 import axios from "axios";
 
 const axiosInstance = axios.create({
@@ -41,11 +42,21 @@ export const getRecommandationByImages = async (
     images,
     preferences
   };
-  console.log(body);
   const response = await axiosInstance.post<Recommandation[]>(`/recommend_by_image`, body);
   // const response = await axiosInstance.get<Recommandation[]>(`/recommend_by_preferences`,);
   return response.data;
 };
+
+// export interface FilterPayload {
+//   season: string[];
+//   articleType: string[];
+//   baseColor: string[];
+// }
+
+// export const filterProducts = async (filterPayload: FilterPayload) => {
+//   const response = await axiosInstance.post<Recommandation[]>("/recommend_by_preferences", filterPayload);
+//   return response.data;
+// };
 
 export async function getProducts(recommandations: Recommandation[]) {
   const products = await Promise.all(

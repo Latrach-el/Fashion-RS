@@ -181,6 +181,9 @@ export default function ProductsList({ products }: ProductsListProps) {
             <h2 id="products-heading" className="sr-only">
               Products
             </h2>
+            <p>
+              Showing <span className="font-medium">{filteredProducts.length}</span> products
+            </p>
 
             <div className="grid grid-cols-1 gap-x-8 gap-y-10 lg:grid-cols-5">
               {/* Desktop Filters */}

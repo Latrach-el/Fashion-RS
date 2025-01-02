@@ -15,12 +15,12 @@ export const page_routes: PageRoutesType[] = [
   {
     title: "Menu",
     items: [
-      {
-        title: "Dashboard",
-        href: "/dashboard/default",
-        icon: "PieChart"
-      },
-      { title: "Users", href: "/dashboard/pages/users", icon: "Users" },
+      // {
+      //   title: "Dashboard",
+      //   href: "/dashboard/default",
+      //   icon: "PieChart"
+      // },
+      // { title: "Users", href: "/dashboard/pages/users", icon: "Users" },
       {
         title: "Products",
         href: "/dashboard/pages/products",

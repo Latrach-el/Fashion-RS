@@ -42,9 +42,9 @@ export default function MetricCard({ className }: { className?: string }) {
       <CardHeader>
         <div className="flex justify-between">
           <div>
-            <CardTitle className="text-base">Exercise Minutes</CardTitle>
+            <CardTitle className="text-base">Your Activity</CardTitle>
             <CardDescription>
-              Your exercise minutes are ahead of where you normally are.
+              <span className="text-muted-foreground">Last 7 days</span>
             </CardDescription>
           </div>
           <ExportButton />

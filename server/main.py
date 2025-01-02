@@ -139,7 +139,7 @@ class UnifiedRecommendationSystem:
         return all_recommendations
 
 
-    def recommend_by_preferences(self, preferences, top_n=5):
+    def recommend_by_preferences(self, preferences, top_n=15):
         query = ' '.join([
             preferences.get('gender', ''),
             preferences.get('season', ''),

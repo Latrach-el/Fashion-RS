@@ -1,5 +1,5 @@
 import { generateMeta } from "@/lib/utils";
-import { getProducts, getRecommandationByPreferences, Recommandation } from "@/services/recommandation";
+import { getProducts, getRecommandationByPreferences } from "@/services/recommandation";
 import { getCurrentSeason } from "@/utils/date";
 import { currentUser } from "@clerk/nextjs/server";
 import ProductsList from "./products-list";
@@ -14,7 +14,6 @@ export async function generateMetadata() {
 
 export default async function Page() {
   const user = await currentUser();
-
 
   const recommandations = await getRecommandationByPreferences(
     user?.unsafeMetadata.gender as string,
